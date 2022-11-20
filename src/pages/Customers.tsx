@@ -4,13 +4,13 @@ import { CustomerList, RadioButtons } from '../components'
 import { ListZellerCustomers } from '../queries'
 
 const Customers: React.FC = () => {
-  const [customerType, setCustomerType] = useState<string>('')
+  const [customerRole, setCustomerRole] = useState('')
   const { data, loading, error } = useQuery(ListZellerCustomers)
 
-  const handleSelectCustomerType = (
+  const handleSelectCustomerRole = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setCustomerType(event.target.value)
+    setCustomerRole(event.target.value)
   }
 
   if (loading) return <h1>Loading...</h1>
@@ -20,8 +20,11 @@ const Customers: React.FC = () => {
   return (
     <div>
       <h1>Customers</h1>
-      <RadioButtons value={customerType} onChange={handleSelectCustomerType} />
-      <CustomerList customers={data.listZellerCustomers.items} />
+      <RadioButtons value={customerRole} onChange={handleSelectCustomerRole} />
+      <CustomerList
+        customers={data.listZellerCustomers.items}
+        role={customerRole}
+      />
     </div>
   )
 }
