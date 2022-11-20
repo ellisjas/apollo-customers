@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
-import { ZellerCustomers } from '../API'
+import CustomerList from '../components/CustomerList'
 import { ListZellerCustomers } from '../queries'
 
 const Customers: React.FC = () => {
@@ -13,14 +13,7 @@ const Customers: React.FC = () => {
   return (
     <div>
       <h1>Customers</h1>
-      {data.listZellerCustomers.items.map((customer: ZellerCustomers) => {
-        return (
-          <div key={customer.id}>
-            <h3>{customer.name}</h3>
-            <p>{customer.role}</p>
-          </div>
-        )
-      })}
+      <CustomerList customers={data.listZellerCustomers.items} />
     </div>
   )
 }
