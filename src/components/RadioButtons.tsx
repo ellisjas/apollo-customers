@@ -8,9 +8,18 @@ import FormLabel from '@mui/material/FormLabel'
 interface RadioButtonsProps {
   value: string
   onChange: (event: React.ChangeEvent<HTMLInputElement>, value: string) => void
+  reset: () => void
 }
 
-const RadioButtons: React.FC<RadioButtonsProps> = ({ value, onChange }) => {
+const RadioButtons: React.FC<RadioButtonsProps> = ({
+  value,
+  onChange,
+  reset,
+}) => {
+  const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') reset()
+  }
+
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">User Type</FormLabel>
@@ -19,6 +28,7 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({ value, onChange }) => {
         name="radio-buttons-group"
         value={value}
         onChange={onChange}
+        onKeyUp={handleKeyUp}
       >
         <FormControlLabel value="ADMIN" control={<Radio />} label="Admin" />
         <FormControlLabel value="MANAGER" control={<Radio />} label="Manager" />

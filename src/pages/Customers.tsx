@@ -13,6 +13,8 @@ const Customers: React.FC = () => {
     setCustomerRole(event.target.value)
   }
 
+  const resetRole = () => setCustomerRole('')
+
   if (loading) return <h1>Loading...</h1>
 
   if (error) return <h1>Error!</h1>
@@ -20,7 +22,11 @@ const Customers: React.FC = () => {
   return (
     <div>
       <h1>Customers</h1>
-      <RadioButtons value={customerRole} onChange={handleSelectCustomerRole} />
+      <RadioButtons
+        value={customerRole}
+        onChange={handleSelectCustomerRole}
+        reset={resetRole}
+      />
       <CustomerList
         customers={data.listZellerCustomers.items}
         role={customerRole}
