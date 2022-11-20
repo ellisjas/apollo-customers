@@ -5,41 +5,22 @@
 export type CreateZellerCustomersInput = {
   email: string,
   name: string,
-<<<<<<< Updated upstream
-  role: Role,
-};
-
-export enum Role {
-  ADMIN = "ADMIN",
-  MANAGER = "MANAGER",
-}
-=======
   role: string,
 };
->>>>>>> Stashed changes
-
 
 export type ZellerCustomers = {
   __typename: "ZellerCustomers",
   id: string,
   email: string,
   name: string,
-<<<<<<< Updated upstream
-  role: Role,
-=======
   role: string,
->>>>>>> Stashed changes
 };
 
 export type UpdateZellerCustomersInput = {
   id: string,
   email?: string | null,
   name?: string | null,
-<<<<<<< Updated upstream
-  role?: Role | null,
-=======
   role?: string | null,
->>>>>>> Stashed changes
 };
 
 export type DeleteZellerCustomersInput = {
@@ -95,11 +76,7 @@ export type CreateZellerCustomersMutation = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -113,11 +90,7 @@ export type UpdateZellerCustomersMutation = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -131,11 +104,7 @@ export type DeleteZellerCustomersMutation = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -149,11 +118,7 @@ export type GetZellerCustomersQuery = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -171,11 +136,7 @@ export type ListZellerCustomersQuery = {
       id: string,
       email: string,
       name: string,
-<<<<<<< Updated upstream
-      role: Role,
-=======
       role: string,
->>>>>>> Stashed changes
     } | null > | null,
     nextToken?: string | null,
   } | null,
@@ -185,11 +146,7 @@ export type OnCreateZellerCustomersSubscriptionVariables = {
   id?: string | null,
   email?: string | null,
   name?: string | null,
-<<<<<<< Updated upstream
-  role?: Role | null,
-=======
   role?: string | null,
->>>>>>> Stashed changes
 };
 
 export type OnCreateZellerCustomersSubscription = {
@@ -198,11 +155,7 @@ export type OnCreateZellerCustomersSubscription = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -210,11 +163,7 @@ export type OnUpdateZellerCustomersSubscriptionVariables = {
   id?: string | null,
   email?: string | null,
   name?: string | null,
-<<<<<<< Updated upstream
-  role?: Role | null,
-=======
   role?: string | null,
->>>>>>> Stashed changes
 };
 
 export type OnUpdateZellerCustomersSubscription = {
@@ -223,11 +172,7 @@ export type OnUpdateZellerCustomersSubscription = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };
 
@@ -235,11 +180,7 @@ export type OnDeleteZellerCustomersSubscriptionVariables = {
   id?: string | null,
   email?: string | null,
   name?: string | null,
-<<<<<<< Updated upstream
-  role?: Role | null,
-=======
   role?: string | null,
->>>>>>> Stashed changes
 };
 
 export type OnDeleteZellerCustomersSubscription = {
@@ -248,10 +189,6 @@ export type OnDeleteZellerCustomersSubscription = {
     id: string,
     email: string,
     name: string,
-<<<<<<< Updated upstream
-    role: Role,
-=======
     role: string,
->>>>>>> Stashed changes
   } | null,
 };

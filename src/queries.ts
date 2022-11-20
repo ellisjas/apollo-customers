@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const ListZellerCustomers = gql`
 <<<<<<< Updated upstream
@@ -10,8 +10,8 @@ export const ListZellerCustomers = gql`
         name
         role
       }
+    }
   }
-}
 `
 =======
 query ListZellerCustomersByRole($filter: TableZellerCustomersFilterInput) {
