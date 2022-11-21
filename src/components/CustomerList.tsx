@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { ZellerCustomers } from '../API'
+import styled from 'styled-components'
+import Header from './Header'
+
+const Container = styled.div`
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 0;
+  margin: 30px 0;
+`
 
 interface CustomerListProps {
   customers: ZellerCustomers[]
@@ -8,8 +17,8 @@ interface CustomerListProps {
 
 const CustomerList: React.FC<CustomerListProps> = ({ customers, role }) => {
   return (
-    <>
-      <h1>{role === 'ADMIN' ? 'Admin Users' : 'Manager Users'}</h1>
+    <Container>
+      <Header>{role === 'ADMIN' ? 'Admin Users' : 'Manager Users'}</Header>
       {customers.map((customer: ZellerCustomers) => {
         return (
           <div key={customer.id}>
@@ -18,7 +27,7 @@ const CustomerList: React.FC<CustomerListProps> = ({ customers, role }) => {
           </div>
         )
       })}
-    </>
+    </Container>
   )
 }
 

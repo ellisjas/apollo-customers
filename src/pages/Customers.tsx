@@ -3,6 +3,13 @@ import { useQuery } from '@apollo/client'
 import { CustomerList, RadioButtons } from '../components'
 import { ListZellerCustomers } from '../queries'
 import CircularProgress from '@mui/material/CircularProgress'
+import styled from 'styled-components'
+import Header from '../components/Header'
+
+const Container = styled.div`
+  padding: 10px 40px;
+  width: 500px;
+`
 
 const Customers: React.FC = () => {
   const [customerRole, setCustomerRole] = useState('ADMIN')
@@ -45,10 +52,11 @@ const Customers: React.FC = () => {
   }
 
   return (
-    <>
-      <h1>Customers</h1>
+    <Container>
+      <Header>User Types</Header>
+      <RadioButtons value={customerRole} onChange={handleSelectCustomerRole} />
       {renderContent()}
-    </>
+    </Container>
   )
 }
 

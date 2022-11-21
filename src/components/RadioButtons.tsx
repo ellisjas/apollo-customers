@@ -12,7 +12,6 @@ interface RadioButtonsProps {
 const RadioButtons: React.FC<RadioButtonsProps> = ({ value, onChange }) => {
   return (
     <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">User Type</FormLabel>
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         name="radio-buttons-group"
