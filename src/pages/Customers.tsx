@@ -2,10 +2,20 @@ import React, { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { CustomerList, RadioButtons } from '../components'
 import { ListZellerCustomers } from '../queries'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const Customers: React.FC = () => {
-  const [customerRole, setCustomerRole] = useState('')
-  const { data, loading, error } = useQuery(ListZellerCustomers)
+  const [customerRole, setCustomerRole] = useState('ADMIN')
+
+  const { data, loading, error } = useQuery(ListZellerCustomers, {
+    variables: {
+      filter: {
+        role: {
+          eq: customerRole,
+        },
+      },
+    },
+  })
 
   const handleSelectCustomerRole = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -13,25 +23,32 @@ const Customers: React.FC = () => {
     setCustomerRole(event.target.value)
   }
 
-  const resetRole = () => setCustomerRole('')
+  const renderContent = () => {
+    if (error) {
+      console.error(error)
+      return <h1>Error!</h1>
+    }
 
-  if (loading) return <h1>Loading...</h1>
+    if (loading)
+      return (
+        <div>
+          <CircularProgress />
+        </div>
+      )
 
-  if (error) return <h1>Error!</h1>
-
-  return (
-    <div>
-      <h1>Customers</h1>
-      <RadioButtons
-        value={customerRole}
-        onChange={handleSelectCustomerRole}
-        reset={resetRole}
-      />
+    return (
       <CustomerList
         customers={data.listZellerCustomers.items}
         role={customerRole}
       />
-    </div>
+    )
+  }
+
+  return (
+    <>
+      <h1>Customers</h1>
+      {renderContent()}
+    </>
   )
 }
 
