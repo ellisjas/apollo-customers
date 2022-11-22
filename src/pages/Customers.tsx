@@ -4,17 +4,21 @@ import { CustomerList, RadioButtons } from '../components'
 import { ListZellerCustomers } from '../queries'
 import CircularProgress from '@mui/material/CircularProgress'
 import styled from 'styled-components'
-import Header from '../components/Header'
+import { Heading } from '../utils'
 
 const Container = styled.div`
-  padding: 10px 40px;
+  padding: 30px 50px;
   width: 500px;
+`
+
+const Content = styled.div`
+  margin: 25px 0;
 `
 
 const CustomerListContainer = styled.div`
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
-  padding: 10px 0;
+  padding: 25px 0 10px;
   margin: 30px 0;
 `
 
@@ -40,7 +44,7 @@ const Customers: React.FC = () => {
   const renderContent = () => {
     if (error) {
       console.error(error)
-      return <h1>Error!</h1>
+      return <Heading>Something went wrong.</Heading>
     }
 
     if (loading)
@@ -51,22 +55,20 @@ const Customers: React.FC = () => {
       )
 
     return (
-      <>
-        <Header>
+      <CustomerListContainer>
+        <Heading>
           {customerRole === 'ADMIN' ? 'Admin Users' : 'Manager Users'}
-        </Header>
-        <CustomerListContainer>
-          <CustomerList customers={data.listZellerCustomers.items} />
-        </CustomerListContainer>
-      </>
+        </Heading>
+        <CustomerList customers={data.listZellerCustomers.items} />
+      </CustomerListContainer>
     )
   }
 
   return (
     <Container>
-      <Header>User Types</Header>
+      <Heading>User Types</Heading>
       <RadioButtons value={customerRole} onChange={handleSelectCustomerRole} />
-      {renderContent()}
+      <Content>{renderContent()}</Content>
     </Container>
   )
 }
