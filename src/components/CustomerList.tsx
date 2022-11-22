@@ -15,10 +15,9 @@ interface CustomerListProps {
   role: string
 }
 
-const CustomerList: React.FC<CustomerListProps> = ({ customers, role }) => {
+const CustomerList: React.FC<CustomerListProps> = ({ customers }) => {
   return (
-    <Container>
-      <Header>{role === 'ADMIN' ? 'Admin Users' : 'Manager Users'}</Header>
+    <>
       {customers.map((customer: ZellerCustomers) => {
         return (
           <div key={customer.id}>
@@ -27,7 +26,7 @@ const CustomerList: React.FC<CustomerListProps> = ({ customers, role }) => {
           </div>
         )
       })}
-    </Container>
+    </>
   )
 }
 

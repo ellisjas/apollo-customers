@@ -11,6 +11,13 @@ const Container = styled.div`
   width: 500px;
 `
 
+const CustomerListContainer = styled.div`
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 0;
+  margin: 30px 0;
+`
+
 const Customers: React.FC = () => {
   const [customerRole, setCustomerRole] = useState('ADMIN')
 
@@ -44,10 +51,14 @@ const Customers: React.FC = () => {
       )
 
     return (
-      <CustomerList
-        customers={data.listZellerCustomers.items}
-        role={customerRole}
-      />
+      <>
+        <Header>
+          {customerRole === 'ADMIN' ? 'Admin Users' : 'Manager Users'}
+        </Header>
+        <CustomerListContainer>
+          <CustomerList customers={data.listZellerCustomers.items} />
+        </CustomerListContainer>
+      </>
     )
   }
 
