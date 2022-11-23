@@ -10,7 +10,7 @@ const CustomerList: React.FC<CustomerListProps> = ({ customers }) => {
   return (
     <>
       {customers.map((customer: ZellerCustomers) => {
-        return <Customer {...customer} />
+        return <Customer {...customer} key={customer.id} />
       })}
     </>
   )
