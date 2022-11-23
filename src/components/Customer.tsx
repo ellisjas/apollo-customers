@@ -28,14 +28,12 @@ const Details = styled.div`
 `
 
 const Customer = ({ name, role }: ZellerCustomers) => {
-  const firstLetterOfName = name[0]
-
   return (
     <Container>
-      <Avatar>{firstLetterOfName.toUpperCase()}</Avatar>
+      <Avatar>{name.charAt(0).toUpperCase()}</Avatar>
       <Details>
         <Heading3>{name}</Heading3>
-        <Paragraph>{role}</Paragraph>
+        <Paragraph>{role.charAt(0) + role.slice(1).toLowerCase()}</Paragraph>
       </Details>
     </Container>
   )
