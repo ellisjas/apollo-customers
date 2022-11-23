@@ -1,10 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import { Amplify } from 'aws-amplify'
+import { createRoot } from 'react-dom/client'
+import Customers from './pages/Customers'
+import awsExports from './aws-exports'
+import ApolloWrapper from './ApolloWrapper'
 
-const App = () => (
-  <div>
-    <h1>Good night world</h1>
-  </div>
-);
+Amplify.configure(awsExports)
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const App: React.FC = () => {
+  return (
+    <ApolloWrapper>
+      <Customers />
+    </ApolloWrapper>
+  )
+}
+
+const container = document.getElementById('root')
+const root = createRoot(container!)
+
+root.render(<App />)
