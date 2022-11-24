@@ -6,7 +6,7 @@ This application uses Apollo GraphQL. It uses Apollo's filtering capabilities wh
 
 ## Getting started
 
-Clone the repository, cd into the directory on your machine, and run `npm install && npm start`
+Clone the repository, cd into the `zeller-customers` directory, and run `npm install && npm start`
 
 ## Available Scripts
 
