@@ -1,15 +1,15 @@
 import React from 'react'
-import { ZellerCustomers } from '../API'
+import { ZellerCustomer } from '../__generated__/graphql'
 import Customer from './Customer'
 
 interface CustomerListProps {
-  customers: ZellerCustomers[]
+  customers: ZellerCustomer[]
 }
 
 const CustomerList: React.FC<CustomerListProps> = ({ customers }) => {
   return (
     <>
-      {customers.map((customer: ZellerCustomers) => {
+      {customers.map((customer: ZellerCustomer) => {
         return <Customer {...customer} key={customer.id} />
       })}
     </>
