@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { ListZellerCustomers } from "../queries";
+import { ListZellerCustomers } from "../graphql/queries";
 
 const useListZellerCustomers = (role: string) => {
   return useQuery(ListZellerCustomers, {
