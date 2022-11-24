@@ -1,3 +1,4 @@
+import { ListZellerCustomers } from "./graphql/queries"
 import { ZellerCustomer } from "./__generated__/graphql"
 
 export const customer: ZellerCustomer = {
@@ -38,4 +39,27 @@ export const customerList: ZellerCustomer[] = [
     role: 'ADMIN',
     __typename: 'ZellerCustomer',
   }
+]
+
+export const getQueryMocks = (role: string, error?: boolean) => [
+  {
+    request: {
+      query: ListZellerCustomers,
+      variables: {
+        filter: {
+          role: {
+            eq: role,
+          },
+        },
+      },
+    },
+    result: {
+      data: {
+        listZellerCustomers: {
+          items: customerList,
+        },
+      },
+    },
+    error: error ? new Error('An error occurred') : undefined,
+  },
 ]
