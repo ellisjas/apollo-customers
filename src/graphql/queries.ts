@@ -1,31 +1,13 @@
-/* tslint:disable */
-/* eslint-disable */
-// this is an auto generated file. This will be overwritten
+import gql from 'graphql-tag'
 
-export const getZellerCustomers = /* GraphQL */ `
-  query GetZellerCustomers($id: ID!) {
-    getZellerCustomers(id: $id) {
-      id
+export const ListZellerCustomers = gql`
+query ListZellerCustomersByRole($filter: TableZellerCustomerFilterInput) {
+  listZellerCustomers(filter: $filter) {
+    items {
       email
+      id
       name
       role
     }
   }
-`;
-export const listZellerCustomers = /* GraphQL */ `
-  query ListZellerCustomers(
-    $filter: TableZellerCustomersFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listZellerCustomers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        email
-        name
-        role
-      }
-      nextToken
-    }
-  }
-`;
+}`

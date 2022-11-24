@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components: <CustomerList /> renders 1`] = `
+<div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      J
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Jasmine
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Admin
+      </p>
+    </div>
+  </div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      M
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Mark
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Manager
+      </p>
+    </div>
+  </div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      T
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Tim
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Manager
+      </p>
+    </div>
+  </div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      E
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Edie
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Manager
+      </p>
+    </div>
+  </div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      J
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Julian
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Admin
+      </p>
+    </div>
+  </div>
+</div>
+`;

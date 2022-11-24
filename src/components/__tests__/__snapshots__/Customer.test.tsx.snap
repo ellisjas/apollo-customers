@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components: <Customer /> renders Customer 1`] = `
+<div>
+  <div
+    class="sc-hLBbgP gXRIlG"
+  >
+    <div
+      class="sc-eDvSVe cslRUZ"
+    >
+      J
+    </div>
+    <div
+      class="sc-jSUZER kalImh"
+    >
+      <h3
+        class="sc-gswNZR dejOgB"
+      >
+        Jasmine
+      </h3>
+      <p
+        class="sc-dkrFOg jINReh"
+      >
+        Admin
+      </p>
+    </div>
+  </div>
+</div>
+`;

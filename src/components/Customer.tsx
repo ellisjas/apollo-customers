@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ZellerCustomers } from '../API'
 import { defaultFont, Heading3, Paragraph } from '../utils'
+import { ZellerCustomer } from '../__generated__/graphql'
 
 const Container = styled.div`
   margin: 25px 0;
@@ -27,15 +27,15 @@ const Details = styled.div`
   gap: 5px;
 `
 
-const Customer = ({ name, role }: ZellerCustomers) => {
-  const firstLetterOfName = name[0]
+const Customer = ({ name, role }: ZellerCustomer) => {
+  if (!name || !role) return <div />
 
   return (
     <Container>
-      <Avatar>{firstLetterOfName.toUpperCase()}</Avatar>
+      <Avatar>{name.charAt(0).toUpperCase()}</Avatar>
       <Details>
         <Heading3>{name}</Heading3>
-        <Paragraph>{role}</Paragraph>
+        <Paragraph>{role.charAt(0) + role.slice(1).toLowerCase()}</Paragraph>
       </Details>
     </Container>
   )
