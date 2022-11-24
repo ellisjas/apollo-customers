@@ -3,7 +3,8 @@ import { CustomerList } from '../components'
 import CircularProgress from '@mui/material/CircularProgress'
 import styled from 'styled-components'
 import { Heading } from '../utils'
-import { useListZellerCustomers } from '../hooks'
+import { useQuery } from '@apollo/client'
+import { ListZellerCustomers } from '../graphql/queries'
 
 const Container = styled.div`
   border-top: 1px solid lightgrey;
@@ -13,16 +14,23 @@ const Container = styled.div`
 `
 
 const CustomerListContainer = ({ role }: { role: string }) => {
-  const { data, loading, error } = useListZellerCustomers(role)
+  const { data, loading, error } = useQuery(ListZellerCustomers, {
+    variables: {
+      filter: {
+        role: {
+          eq: role.toUpperCase(),
+        },
+      },
+    },
+  })
 
   if (error) {
-    console.error(error)
     return <Heading>Something went wrong.</Heading>
   }
 
   if (loading)
     return (
-      <div>
+      <div data-testid="loading-state">
         <CircularProgress />
       </div>
     )
