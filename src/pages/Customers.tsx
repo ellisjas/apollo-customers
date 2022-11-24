@@ -9,19 +9,19 @@ const Container = styled.div`
 `
 
 const Customers: React.FC = () => {
-  const [customerRole, setCustomerRole] = useState('ADMIN')
+  const [role, setRole] = useState('ADMIN')
 
   const handleSelectCustomerRole = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setCustomerRole(event.target.value)
+    setRole(event.target.value)
   }
 
   return (
     <Container>
       <Heading>User Types</Heading>
-      <RadioButtons value={customerRole} onChange={handleSelectCustomerRole} />
-      <CustomerListContainer customerRole={customerRole} />
+      <RadioButtons value={role} onChange={handleSelectCustomerRole} />
+      <CustomerListContainer role={role} />
     </Container>
   )
 }

@@ -12,6 +12,7 @@ const Container = styled.div`
   margin: 30px 0;
 `
 
+const CustomerListContainer = ({ role }: { role: string }) => {
   const { data, loading, error } = useListZellerCustomers(role)
 
   if (error) {
@@ -28,9 +29,7 @@ const Container = styled.div`
 
   return (
     <Container>
-      <Heading>
-        {customerRole === 'ADMIN' ? 'Admin Users' : 'Manager Users'}
-      </Heading>
+      <Heading>{role === 'ADMIN' ? 'Admin Users' : 'Manager Users'}</Heading>
       <CustomerList customers={data.listZellerCustomers.items} />
     </Container>
   )
