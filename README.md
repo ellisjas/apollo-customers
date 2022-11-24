@@ -1,4 +1,4 @@
-# List Zeller Customers App
+# Zeller Customers App
 
 This application lists Zeller customers according to role, as part of a coding challenge for [Zeller](https://www.myzeller.com/).
 
