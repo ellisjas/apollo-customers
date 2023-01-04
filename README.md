@@ -1,12 +1,12 @@
-# Zeller Customers App
+# Customers App
 
-This application lists Zeller customers according to role, as part of a coding challenge for [Zeller](https://www.myzeller.com/).
+This application lists customers according to role.
 
 This application uses Apollo GraphQL. It uses Apollo's filtering capabilities when querying the customer list.
 
 ## Getting started
 
-Clone the repository, cd into the `zeller-customers` directory, and run `npm install && npm start`
+Clone the repository, cd into the `apollo-customers` directory, and run `npm install && npm start`
 
 ## Available Scripts
 
